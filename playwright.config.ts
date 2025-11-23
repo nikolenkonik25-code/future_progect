@@ -22,6 +22,7 @@ export default defineConfig({
   use: {
     baseURL: BASE_URL,
     trace: 'on-first-retry',
+    testIdAttribute: 'data-test'
   },
 
   /* Configure projects for major browsers */

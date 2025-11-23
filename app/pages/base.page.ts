@@ -1,4 +1,4 @@
-import { Page } from "@playwright/test";
+import { Page, Locator } from "@playwright/test";
 
 export abstract class BasePage {
     abstract url: string;
