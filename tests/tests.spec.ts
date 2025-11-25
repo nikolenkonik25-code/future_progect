@@ -7,7 +7,7 @@ test.describe.only('SauceDemo Login', () => {
     await page.goto(BASE_URL);
   });
 
- 
+
   test('Successful login', async ({ page }) => {
     await page.fill('#user-name', 'standard_user');
     await page.fill('#password', 'secret_sauce');
