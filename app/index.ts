@@ -5,6 +5,5 @@ export class App {
     readonly login: LoginPage;
     constructor(readonly page: Page) {
        this.login = new LoginPage(page);
-    
     }
 }
