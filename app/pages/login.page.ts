@@ -7,7 +7,7 @@ interface LoginForm {
 }
 
 export class LoginPage extends BasePage {
-  readonly url = "/";
+  readonly url = "";
   readonly usernameField = this.page.getByTestId("username");
   readonly passwordField = this.page.getByTestId("password");
   readonly loginBtn = this.page.getByTestId("login-button");
