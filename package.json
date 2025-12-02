@@ -7,12 +7,12 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test --project=chromium --headed"
+    "test": "npx playwright test --project=chromium --headed",
+    "ui": "npx playwright test --project=chromium --ui"
   },
   "devDependencies": {
     "@playwright/test": "^1.56.1",
     "@types/node": "^24.10.1"
-    
   },
   "dependencies": {
     "dotenv": "^17.2.3"
