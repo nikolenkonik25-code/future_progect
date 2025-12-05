@@ -56,8 +56,8 @@ test.describe("sign in", () => {
     test("problem_user", async ({ app, page }) => {
       await app.login.visit();
       await app.login.login({
-        username: "problem_user",
-        password: "secret_sauce",
+        username: Users.problemuser,
+        password: BASE_USER.PASSWORD,
       });
       await expect(page).toHaveURL("/inventory.html");
       await app.login.whatIsTheCorrectPhoto(
@@ -68,8 +68,8 @@ test.describe("sign in", () => {
     test("performance_glitch_user", async ({ app, page }) => {
       await app.login.visit();
       await app.login.login({
-        username: "performance_glitch_user",
-        password: "secret_sauce",
+        username: Users.performanceGlitchUser,
+        password: BASE_USER.PASSWORD,
       });
       await expect(page).toHaveURL("/inventory.html");
     });
@@ -77,16 +77,16 @@ test.describe("sign in", () => {
     test("error_user", async ({ app }) => {
       await app.login.visit();
       await app.login.login({
-        username: "error_user",
-        password: "secret_sauce",
+        username: Users.erroruser,
+        password: BASE_USER.PASSWORD,
       });
     });
 
     test("visual_user", async ({ app, page }) => {
       await app.login.visit();
       await app.login.login({
-        username: "visual_user",
-        password: "secret_sauce",
+        username: Users.visualuser,
+        password: BASE_USER.PASSWORD,
       });
 
       await expect(page).toHaveURL("/inventory.html");
