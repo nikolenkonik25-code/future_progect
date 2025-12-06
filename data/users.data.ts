@@ -5,4 +5,4 @@ export const BASE_USER = {
 
 export const Users = {
   lockedOutUser: "locked_out_user",
-}
+};

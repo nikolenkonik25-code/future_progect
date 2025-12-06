@@ -24,14 +24,14 @@ export class LoginPage extends BasePage {
       await this.loginBtn.click();
     });
   }
-  
+
   async assertErrorMessage(message: string): Promise<void> {
     await test.step("Assert error message", async () => {
       await expect(this.errorMessage).toBeVisible();
       await expect(this.errorMessage).toContainText(message);
     });
   }
-  
+
   async whatIsTheCorrectPhoto(photoUrl: string): Promise<void> {
     await test.step("Check photo", async () => {
       await expect(this.photo).toHaveAttribute("src", photoUrl);
