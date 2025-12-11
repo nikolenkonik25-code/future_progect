@@ -1,9 +1,16 @@
+import { App } from "../app";
 import { BASE_USER, Users } from "../data/users.data";
 import { test } from "../fixsture";
 import { expect } from "@playwright/test";
 
+let app: App;
+
 test.describe("sign in", () => {
-  test("sing in", async ({ page, app }) => {
+  test.beforeEach(async ({ page }) => {
+    app = new App(page);
+  });
+
+  test.only("sing in", async ({ page }) => {
     await app.login.visit();
     await app.login.login({
       username: BASE_USER.USERNAME,
@@ -12,7 +19,7 @@ test.describe("sign in", () => {
     await expect(page).toHaveURL("/inventory.html");
   });
 
-  test("Wrong password", async ({ app }) => {
+  test("Wrong password", async ({ }) => {
     await app.login.visit();
     await app.login.login({
       username: BASE_USER.USERNAME,
@@ -23,7 +30,7 @@ test.describe("sign in", () => {
     );
   });
 
-  test("Empty password", async ({ app }) => {
+  test("Empty password", async ({ }) => {
     await app.login.visit();
     await app.login.login({
       username: "standard_user",
@@ -32,7 +39,7 @@ test.describe("sign in", () => {
     await app.login.assertErrorMessage("Password is required");
   });
 
-  test("Empty username", async ({ app }) => {
+  test("Empty username", async ({  }) => {
     await app.login.visit();
     await app.login.login({
       username: "",
@@ -42,7 +49,7 @@ test.describe("sign in", () => {
   });
 
   test.describe("Specific users", () => {
-    test("locked_out_user @low", async ({ app }) => {
+    test("locked_out_user @low", async ({  }) => {
       await app.login.visit();
       await app.login.login({
         username: Users.lockedOutUser,
@@ -53,7 +60,7 @@ test.describe("sign in", () => {
       );
     });
 
-    test("problem_user", async ({ app, page }) => {
+    test("problem_user", async ({ page }) => {
       await app.login.visit();
       await app.login.login({
         username: Users.problemuser,

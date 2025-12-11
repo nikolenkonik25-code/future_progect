@@ -1,7 +1,8 @@
 export const BASE_USER = {
-  USERNAME: process.env.username!,
-  PASSWORD: process.env.password!,
+  USERNAME: "standard_user",
+  PASSWORD: process.env.PASSWORD!,
 } as const;
+
 
 export const Users = {
   lockedOutUser: "locked_out_user",
